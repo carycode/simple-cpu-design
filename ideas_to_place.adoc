@@ -1,1 +1,19 @@
 
+
+=== Goals
+
+[quote]
+"any project should start off with some notion what of what you're trying to achieve. ... high-level project goals ... Touch the magic."
+-- Bill Buzbee, Magic-1 project http://www.homebrewcpu.com/
+
+
+
+=== Inspirational quotes
+
+[quote]
+"People who are really serious about software should make their own hardware"
+-- Alan Kay, https://www.adafruit.com/quotes
+
+[quote]
+"physically constructing a CPU ... since it allows students to probe the inner workings of the CPU, it helps them "Touch the magic", helps them learn and understand the underlying electronics and hardware."
+-- David Cary, https://en.wikibooks.org/wiki/Microprocessor_Design/Wire_Wrap
