@@ -52,4 +52,74 @@ ____
 
 === Relay computer
 
+=== addressing modes
+
+The earliest CPUs had
+only one way to refer to an address in memory:
+the full absolute address as part of the instruction.
+This forced instructions
+(at least those that LOAD or STORE values to memory)
+to be *longer* than an address.
+(This also seems to mandate
+allowing self-modifying code
+in order to handle arrays, stacks, pointers, etc.
+).
+
+This restriction is awkward, because
+
+[loweralpha]
+. we want to maximize the bits in our address
+. we want to load the entire instruction in a single cycle
+. we want to minimize the data bus width, to reduce hardware costs.
+
+Later mainframes had a huge variety of addressing modes.
+
+Much later, RISC machines typically
+had only one LOAD and one STORE instruction,
+which was kind of complicated
+but could emulate
+most of those addressing modes in a single instruction
+(and, of course, all of those addressing modes
+if multiple instructions or a loop were allowed.
+).
+That addressing mode was:
+
+    LOAD REG(dest):=MEM(offset + REG(base) + REG(index) )
+
+DAV wants to make a CPU as simple as possible:
+So the self-modifying code approach is tempting --
+those designers surely knew something
+about making computers as simple as possible.
+But I'm leaning towards a simplified
+
+    LOAD REG(dest):= MEM(REG(source))
+    
+even though the fully general form of the above RISC LOAD
+now requires 3 instructions:
+
+    ADD REG(t):= REG(base) + offset
+    ADD REG(t):= REG(t) + REG(index)
+    LOAD REG(dest):= MEM(REG(t))
+
+.
+
+But rather than 2 different ADD instructions,
+
+    ADD Ra := Rb + Rc
+    ADD Ra := Rb + constant
+
+perhaps it might simplify the hardware to combine them,
+resulting in the above RISC LOAD
+requiring 2 instructions in the fully general case:
+
+    ADD REG(t):= REG(base) + REG(index) + offset
+    LOAD REG(dest):= MEM(REG(t))
+
+(That ADD is know as LEA: "load effective address"
+on some architectures).
+
+
+
+
+
 
