@@ -17,3 +17,39 @@
 [quote]
 "physically constructing a CPU ... since it allows students to probe the inner workings of the CPU, it helps them "Touch the magic", helps them learn and understand the underlying electronics and hardware."
 -- David Cary, https://en.wikibooks.org/wiki/Microprocessor_Design/Wire_Wrap
+
+[quote]
+____
+...
+Reply by Mike Butts * May 24, 2002
+...
+
+I was co-designer of the Nova 4 / Eclipse S140 16-bit processor back in '77.
+It was 2901 based, plus lots of TTL. I don't remember whether we used
+any PALs or not. The "Eagle" machine immortalized in "Soul of a New
+Machine" was 32-bit and heavily PAL based.
+
+Nova 4 was DG's first DRAM-only machine, no provision for core
+memory. That mattered to the processor because all core memory
+cycles had to be read-modify-write. Reading a core erases it. The only
+difference between Nova 4 and Eclipse S140 was the microcode and
+the price. An old game. Dave Grondalski and I designed the logic
+and wrote the microcode. Two classic parts, the AMD 2901 bitslice
+and the Mostek 16K RAS/CAS DRAM.
+
+If you're reading this email and you never read "Soul of a New Machine",
+go read it *right now*. I've never seen another book that had the
+technology right, the people right, and was so well written. I was two
+aisles over from those guys at the time of the book, and it's uncannily
+spot on.
+http://www.powells.com/cgi-bin/biblio?inkey=1-0316491977-0
+
+--Mike Butts http://www.easystreet.com/~mbutts/xr16vx_jhdl.html
+...
+--
+https://www.embeddedrelated.com/showthread/fpga-cpu/1193-1.php "PAL/GAL CPUs?"
+____
+
+=== Relay computer
+
+
